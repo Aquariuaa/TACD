@@ -11,16 +11,12 @@ def DataProcess(args):
         topo_path = "./dataset/"+data_name+"/topology.npy"
         dag_path = "./dataset/"+data_name+"/true_graph.npy"
 
-        # 历史告警/apps/users/jiyu/Jiyu/Code6/CD4TES-1/dataset/pcic21/24V_439N_Microwave
         alarm_data = pd.read_csv(alarm_path, encoding='utf')
-        # 拓扑图
         if topo_status:
             topo_matrix = np.load(topo_path)
         else:
             topo_matrix = None
-        # 因果图
         dag_matrix = np.load(dag_path)
-        # baseline 方法测试
         X = alarm_data.iloc[:, 0:3]
         X.columns = ['event', 'node', 'timestamp']
         X = X.reindex(columns=['event', 'timestamp', 'node'])
