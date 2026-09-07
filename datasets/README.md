@@ -1,1 +1,1 @@
-For data, refer to the existing works S2GCSL and CausalNet.
+For datasets, please refer to the existing works S2GCSL and CausalNet.
